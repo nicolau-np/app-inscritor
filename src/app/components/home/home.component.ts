@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Component, OnInit, Output, EventEmitter, Inject, Renderer2 } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 
 @Component({
@@ -8,12 +9,24 @@ import { Title } from '@angular/platform-browser';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private title: Title) {
+  data = {
+    menu: 'Home',
+    submenu: null,
+    type: 'home'
+  }
+
+  constructor(@Inject(DOCUMENT) private document: Document, private renderer: Renderer2, private title: Title) {
     title.setTitle('[INSCRITOR] - Sistema de Seleção Automática')
+
   }
 
   ngOnInit(): void {
+    this.renderer.addClass(this.document.body, 'main');
     throw new Error('Method not implemented.');
+  }
+
+  ngOnDestroy() {
+    this.renderer.removeClass(this.document.body, 'main');
   }
 
 }
