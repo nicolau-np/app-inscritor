@@ -9,6 +9,9 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './components/login/login.component';
 import { BlankPageComponent } from './components/blank-page/blank-page.component';
+import { EstudanteCreateComponent } from './components/estudantes/estudante-create/estudante-create.component';
+import { EstudanteListComponent } from './components/estudantes/estudante-list/estudante-list.component';
+import { EstudanteEditComponent } from './components/estudantes/estudante-edit/estudante-edit.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { BlankPageComponent } from './components/blank-page/blank-page.component
     HeaderComponent,
     FooterComponent,
     LoginComponent,
-    BlankPageComponent
+    BlankPageComponent,
+    EstudanteCreateComponent,
+    EstudanteListComponent,
+    EstudanteEditComponent
   ],
   imports: [
     BrowserModule,
