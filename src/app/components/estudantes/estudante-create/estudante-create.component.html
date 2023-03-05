@@ -1,1 +1,57 @@
-<p>estudante-create works!</p>
+<div class="wrapper">
+  <app-header [paren]="data"></app-header>
+  <!-- BEGIN: Content -->
+  <div class="main-panel">
+
+    <div class="content">
+      <div class="page-inner">
+        <div class="page-header">
+          <h4 class="page-title">{{data.menu}}</h4>
+          <ul class="breadcrumbs">
+            <li class="nav-home">
+              <a routerLink="/">
+                <i class="flaticon-home"></i>
+              </a>
+            </li>
+            <li class="separator">
+              <i class="flaticon-right-arrow"></i>
+            </li>
+            <li class="nav-item">
+              <a href="#">{{data.menu}}</a>
+            </li>
+            <li class="separator">
+              <i class="flaticon-right-arrow"></i>
+            </li>
+            <li class="nav-item">
+              <a href="#">{{data.submenu}}</a>
+            </li>
+          </ul>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <div class="card-title">Formulário de Cadastro</div>
+              </div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-12">
+
+                  </div>
+                </div>
+              </div>
+              <div class="card-action">
+                <button class="btn btn-success">Submit</button>
+                <button class="btn btn-danger">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <app-footer></app-footer>
+  </div>
+  <!-- END: Content -->
+
+</div>
