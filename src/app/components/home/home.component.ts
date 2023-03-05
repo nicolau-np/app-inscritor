@@ -10,7 +10,7 @@ import { Title } from '@angular/platform-browser';
 export class HomeComponent implements OnInit {
 
   data = {
-    menu: 'Home',
+    menu: 'Principal',
     submenu: null,
     type: 'home'
   }
