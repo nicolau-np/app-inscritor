@@ -10,7 +10,7 @@ export class AppComponent implements OnInit {
 
 
   constructor(private title: Title) {
-    title.setTitle('App-Inscritor')
+    title.setTitle('[INSCRITOR] - Sistema de Seleção Automática')
   }
 
   ngOnInit(): void {

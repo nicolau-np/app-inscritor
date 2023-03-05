@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+import { DOCUMENT } from '@angular/common';
+import { Component, Inject, OnInit, Renderer2 } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-error',
@@ -6,14 +9,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./error.component.css']
 })
 export class ErrorComponent implements OnInit {
-  data = {
-    menu: 'Error',
-    submenu: null,
-    type: 'error'
+
+  constructor(@Inject(DOCUMENT) private document: Document, private renderer: Renderer2, private title: Title, private router: Router) {
+    this.title.setTitle('[ERROR] - Página não encontrada')
   }
 
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    this.renderer.addClass(this.document.body, 'main');
+  }
+
+  ngOnDestroy() {
+    this.renderer.removeClass(this.document.body, 'main');
+  }
+
+  goToHome() {
+    this.router.navigate(['/'])
   }
 
 }
