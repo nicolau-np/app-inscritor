@@ -12,6 +12,10 @@ import { BlankPageComponent } from './components/blank-page/blank-page.component
 import { EstudanteCreateComponent } from './components/estudantes/estudante-create/estudante-create.component';
 import { EstudanteListComponent } from './components/estudantes/estudante-list/estudante-list.component';
 import { EstudanteEditComponent } from './components/estudantes/estudante-edit/estudante-edit.component';
+import { ToastrModule } from 'ngx-toastr';
+import { ReactiveFormsModule } from '@angular/forms';
+
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,7 +32,10 @@ import { EstudanteEditComponent } from './components/estudantes/estudante-edit/e
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
