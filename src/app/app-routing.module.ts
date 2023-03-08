@@ -9,11 +9,19 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'login', component: LoginComponent },
+  {
+    path: 'user', children: [
+      { path: 'login', component: LoginComponent }
+    ]
+  },
 
-  { path: 'estudantes/create', component: EstudanteCreateComponent },
-  { path: 'estudantes/list', component: EstudanteListComponent },
-  { path: 'estudantes/edit/:id', component: EstudanteEditComponent },
+  {
+    path: 'estudantes', children: [
+      { path: 'create', component: EstudanteCreateComponent },
+      { path: 'list', component: EstudanteListComponent },
+      { path: 'edit/:id', component: EstudanteEditComponent },
+    ]
+  },
 
   { path: '**', component: ErrorComponent },
 ];

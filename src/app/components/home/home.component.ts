@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.renderer.addClass(this.document.body, 'main');
-    throw new Error('Method not implemented.');
+   
   }
 
   ngOnDestroy() {
